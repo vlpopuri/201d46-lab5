@@ -54,14 +54,36 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
+// function sumAndMultiply(a, b, c) { //eslint-disable-line
+//   var added = (a + b + c);
+//   var multiply = (a * b * c);
+//   var return_string_sum= a + ' and ' + b +  ' and ' + c + ' sum to ' +  added + '.';
+//   var return_string_multiply = 'The product of ' + a +  ' and ' + b + ' and ' + c + ' is ' + multiply +'.';
+//  console.log(added);
+//  console.log(multiply);
+//  return[added, multiply, return_string_sum, return_string_multiply];
+// }
+
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var added = (a + b + c);
-  var multiply = (a * b * c);
-  var return_string_sum= a + ' and ' + b +  ' and ' + c + ' sum to ' +  added + '.';
-  var return_string_multiply = 'The product of ' + a +  ' and ' + b + ' and ' + c + ' is ' + multiply +'.';
- console.log(added);
- console.log(multiply);
- return[added, multiply, return_string_sum, return_string_multiply];
+  // first sum
+  var a_and_b = sum(a,b) // a_and_b === [7, the sum of 2 and 5 is 7]
+  var number_from_a_and_b = a_and_b[0];
+  var a_b_and_c = sum(number_from_a_and_b, c) //[9, asdfkja;lskdjf;lkaj]
+  var sum_total = a_b_and_c[0];
+  
+  // then multiply
+   a_and_b = multiply(a,b)
+   number_from_a_and_b = a_and_b[0];
+   a_b_and_c = multiply(number_from_a_and_b, c)
+  var product_total = a_b_and_c[0];
+
+  var return_string_sum= a + ' and ' + b +  ' and ' + c + ' sum to ' +  sum_total + '.';
+  var return_string_multiply = 'The product of ' + a +  ' and ' + b + ' and ' + c + ' is ' + product_total +'.';
+ console.log(sum_total);
+ console.log(product_total);
+ var save = [sum_total, product_total, return_string_sum, return_string_multiply];
+ console.log(save);
+ return save;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -85,6 +107,19 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(sumArr) { //eslint-disable-line
 
 }
+
+/*
+testArray
+(3) [2, 3, 4]0: 21: 32: 4length: 3__proto__: Array(0)
+[0, 1, 2, 3, 4].reduce(function(accumulator, currentValue, currentIndex, array) {
+  return accumulator + currentValue;
+});
+10
+testArray.reduce(function(accumulator, currentValue, currentIndex, array) {
+  return accumulator + currentValue;
+});
+9
+*/
 
 // Here is the test for sumArray(); uncomment it to run it
 
