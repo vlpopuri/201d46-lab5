@@ -103,9 +103,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 var testArray = [2, 3, 4]; //eslint-disable-line
+var sum = 0;
 
-function sumArray(sumArr) { //eslint-disable-line
-
+function testSumArray(sumArr)
+ { //eslint-disable-line
+ //loop through the array and access all the function elements for summing up
+  for(var i=0; i < sumArr.length; i ++)
+  {
+  (sum = sum + sumArr[i]);
+  
+  }
+  return (sum); //returns the sum of all the elements in the array
 }
 
 /*
@@ -122,8 +130,9 @@ testArray.reduce(function(accumulator, currentValue, currentIndex, array) {
 */
 
 // Here is the test for sumArray(); uncomment it to run it
-
-// testSumArray(testArray);
+console.log ('calling testSummArray function');
+ var fnout=testSumArray(testArray);
+ console.log (' Sum of the array passed is : ' + fnout);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
